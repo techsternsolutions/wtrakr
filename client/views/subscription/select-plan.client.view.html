@@ -1,0 +1,46 @@
+<form name="selectPlan" ng-submit="updatePlan(selectPlan.$valid)" class="signin" novalidate autocomplete="off">
+  <ul class="selectPlan">
+    <li>
+      <div class="plan_box">
+        <h3 class="">100 Bottle <span>Free</span></h3>
+      </div>
+      <input type="radio" name="plan" ng-model="user.membership.package" value="Starter" required> Starter</input>
+      <!-- <checkbox large ng-model="user.membership.package" ng-true-value="Lite" class='pull-right checkbox'></checkbox> -->
+    </li>
+
+    <li>
+      <div class="plan_box">
+        <h3 class="">500 Bottle <span>$9 Per Month</span></h3>
+      </div>
+      <input type="radio" name="plan" ng-model="user.membership.package" value="Gold" required> Gold</input>
+      <!-- <checkbox large ng-model="package.pro" ng-true-value="Pro" ng-false-value="The Untruth" class='pull-right checkbox'></checkbox> -->
+    </li>
+
+    <li>
+      <div class="plan_box">
+        <h3 class="">Unlimited Bottle <span>$19 Per Month</span> <span class="popular">Most Popular</span></h3>
+      </div>
+      <input type="radio" name="plan" ng-model="user.membership.package" value="Premium" required> Premium</input>
+      <!-- <checkbox large ng-model="package.standard" ng-true-value="Standard" ng-false-value="The Untruth" class='pull-right checkbox'></checkbox> -->
+    </li>
+
+    <li>
+      <div class="plan_box">
+        <h3 class="">True Value Wine Storage <span>coming in the future</span></h3>
+      </div>
+      <!-- <input type="radio" name="plan" ng-model="user.membership.package" value="unlimited" required></input> -->
+      <!-- <checkbox large ng-model="package.unlimited" ng-true-value="unlimited" ng-false-value="The Untruth" class='pull-right checkbox'></checkbox> -->
+    </li>
+
+  </ul>
+
+  <div class="modal-footer login save">
+    <div class="col-md-6 col-sm-6 col-xs-12 footer border-right">
+      <a href="#" class="btn btn-lg save" ng-click="close()">Cancel</a>
+    </div>
+
+    <div class="col-md-6 col-sm-6 col-xs-12 footer">
+     <button type="submit" class="show-signup btn-lg">Save Changes</button>
+   </div>
+ </div>
+</form>

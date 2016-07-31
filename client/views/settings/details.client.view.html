@@ -1,0 +1,128 @@
+<div class="accountsetting_tabs detalis">
+  <div class="account_full_width clearfix">
+    <div class="col-md-3 col-sm-3 col-xs-12">
+      <img src="modules/users/client/img/profile/default.png" ng-src="{{imageURL}}" alt="{{user.firstName}}" class="user-profile-picture">
+    </div>
+
+
+    <div class="col-md-4 col-sm-6 col-xs-12">
+      <div class="" ng-hide="uploader.queue.length">
+        <span class="btn btn-default btn-file"  style="margin-top: 30px;">
+          Browse for file.... <input type="file" nv-file-select uploader="uploader">
+        </span>
+      </div>
+      <div ng-show="success" class="text-center text-success">
+        <strong>Profile Picture Changed Successfully</strong>
+      </div>
+      <div ng-show="error" class="text-center text-danger">
+        <strong ng-bind="error"></strong>
+      </div>
+    </div>
+
+    <div class="col-md-5 col-sm-3 col-xs-12">
+      <div ng-show="uploader.queue.length" style="margin-top: 30px;">
+        <a href="#" ng-click="uploadProfilePicture();" class="upload_avatar">UPLOAD AVATAR</a>
+        <button class="btn btn-danger" ng-click="cancelUpload();">Cancel</button>
+      </div>
+    </div>
+  </div><!--account_full_width-->
+
+  <form name="userForm" ng-submit="updateUserProfile(userForm.$valid)" class="signin" novalidate autocomplete="off">
+    <div class="accountseting_row clearfix">
+
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <div class="form-group" show-errors>
+          <input type="text" id="firstName" name="firstName" class="form-control" ng-model="user.firstName" placeholder="First Name" required>
+          <div ng-messages="userForm.firstName.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">First name is required.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <div class="form-group" show-errors>
+          <input type="text" id="lastName" name="lastName" class="form-control" ng-model="user.lastName" placeholder="Last Name" required>
+          <div ng-messages="userForm.lastName.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Last name is required.</p>
+          </div>
+        </div>
+      </div>
+    </div><!--accountseting_row-->
+
+    <div class="accountseting_row clearfix">
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <div class="form-group" show-errors>
+          <input type="email" id="email" name="email" class="form-control" ng-model="user.email" placeholder="Email" required>
+          <div ng-messages="userForm.email.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Email address is required.</p>
+            <p class="help-block error-text" ng-message="email">Email address is invalid.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <div class="form-group" show-errors>
+          <input type="text" id="line_1" name="line_1" class="form-control" ng-model="user.address.line_1" placeholder="Street Line 1">
+        </div>
+      </div>
+    </div><!--accountseting_row-->   
+
+    <div class="accountseting_row clearfix">   
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <div class="form-group" show-errors>
+          <input type="text" id="line_2" name="line_2" class="form-control" ng-model="user.address.line_2" placeholder="Street Line 2">
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <div class="form-group" show-errors>
+          <input type="text" id="city" name="city" class="form-control" ng-model="user.address.city" placeholder="City/Town">
+        </div>
+      </div>
+    </div><!--accountseting_row-->   
+
+    <div class="accountseting_row clearfix">
+     <div class="col-md-6 col-sm-6 col-xs-12">
+      <div class="form-group" show-errors>
+        <select name="country" id="country" ng-model="user.address.country">
+          <option value="">Select Country</option>
+          <option ng-repeat="doc in countries" value="{{doc.title}}" ng-selected="user.address.country == doc.title">{{doc.title}}</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-sm-6 col-xs-12">
+      <div class="form-group" show-errors>
+        <select name="state" id="state" ng-model="user.address.state">
+          <option value="">Select State</option>
+          <option ng-if="user.address.state" value="user.address.state" ng-selected="user.address.state">{{user.address.state}}</option>
+        </select>
+      </div>
+    </div>
+  </div><!--accountseting_row-->   
+
+  <div class="accountseting_row clearfix"> 
+    <div class="col-md-6 col-sm-6 col-xs-12">
+      <div class="form-group" show-errors>
+        <select name="country" id="country" ng-model="user.currency_code">
+        <option value="">Select Currency</option>
+          <option ng-repeat="doc in countries" value="{{doc.currency_code}}" ng-selected="user.currency_code == doc.currency_code">{{doc.currency_code}}</option>
+        </select>
+      </div>
+    </div>  
+    <div class="col-md-6 col-sm-6 col-xs-12">
+      <div class="form-group" show-errors>
+        <input type="text" id="post_code" name="post_code" class="form-control" ng-model="user.address.post_code" placeholder="Zip/Post">
+      </div>
+    </div>
+  </div><!--accountseting_row-->  
+
+  <div class="modal-footer login save">
+    <div class="col-md-6 col-sm-6 col-xs-12 footer border-right">
+      <a href="#" class="btn btn-lg save" ng-click="close()">Cancel</a>
+    </div>
+    <div class="col-md-6 col-sm-6 col-xs-12 footer">
+      <button type="submit" class="show-signup btn-lg">Save Changes</button>
+    </div>
+  </div>
+
+</form>
+</div>

@@ -1,0 +1,39 @@
+<form name="selectPlan" ng-submit="updateUserProfile(selectPlan.$valid)" class="signin" novalidate autocomplete="off">
+
+  <ul class="selectPlan">
+    <li>
+      <div class="plan_box">
+        <h3 class="">Weekly</h3>
+        <span>send me weekly Reports of My inventory</span>
+      </div>
+      <input type="radio" name="plan" ng-model="user.report" value="weekly" required></input>
+    </li>
+
+    <li>
+      <div class="plan_box">
+        <h3 class="">Bi-weekly</h3>
+        <span>send me fortnightly reports of my inventory</span>
+      </div>
+      <input type="radio" name="plan" ng-model="user.report" value="biweekly" required></input>
+    </li>
+
+    <li>
+      <div class="plan_box">
+        <h3 class="">Monthly </h3>
+        <span>send me monthly reports of my inventory</span>
+      </div>
+      <input type="radio" name="plan" ng-model="user.report" value="monthly" required></input>
+    </li>
+  </ul>
+
+  <div class="modal-footer login save">
+    <div class="col-md-6 col-sm-6 col-xs-12 footer border-right">
+      <a href="#" class="btn btn-lg save" ng-click="close()">Cancel</a>
+    </div>
+    <div class="col-md-6 col-sm-6 col-xs-12 footer">
+      <button type="submit" class="show-signup btn-lg" ng-click="closeLogin();">Save Changes</button>
+    </div>
+
+  </div>
+
+</form>

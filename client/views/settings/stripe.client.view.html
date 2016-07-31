@@ -1,0 +1,61 @@
+ 
+<div class="detalis">
+
+  <div class="accountseting_row current_password clearfix">  
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <input type="text" name="card.number" placeholder="Card Number">
+    </div>
+  </div><!--accountseting_row-->
+
+  <div class="accountseting_row clearfix">  
+    <div class="col-md-6 col-sm-6 col-xs-12">
+      <input type="text" name="card.first" placeholder="First Name">
+    </div>
+
+    <div class="col-md-6 col-sm-6 col-xs-12">
+      <input type="text" name="card.last" placeholder="Last Name">
+    </div>
+  </div><!--accountseting_row-->
+
+  <div class="accountseting_row clearfix">  
+    <div class="col-md-6 col-sm-6 col-xs-12">
+      <input type="email" name="card.email" placeholder="Email">
+    </div>
+
+    <div class="col-md-6 col-sm-6 col-xs-12">
+      <input type="text" name="card.coupon" placeholder="Coupon">
+    </div>
+  </div><!--accountseting_row-->
+
+  <div class="accountseting_row clearfix">  
+    <div class="col-md-4 col-sm-6 col-xs-12">
+     <select class="role" name="exp_month" ng-model="card.exp_month">
+      <option value="">Exp. month</option>
+      <option value="">1</option>
+      <option value="">2</option>
+    </select>
+  </div>
+
+  <div class="col-md-4 col-sm-6 col-xs-12">
+    <select class="role" name="exp_year" ng-model="card.exp_year">
+      <option value="">Exp. year</option>
+      <option value="">2017</option>
+      <option value="">2018</option>
+    </select>
+  </div>
+
+  <div class="col-md-3 col-sm-6 col-xs-12">
+    <input type="text" class="" size="4" name="cvc" ng-model="card.cvc" placeholder="CVV" style="padding-top: 25px">
+  </div>
+</div><!--accountseting_row-->
+
+<div class="modal-footer login">
+  <div class="col-md-6 col-sm-6 col-xs-12 footer border-right">
+    <a href="#" class="btn btn-lg save" ng-click="close()">Cancel</a>
+  </div>
+
+  <div class="col-md-6 col-sm-6 col-xs-12 footer">
+    <button type="submit" class="show-signup btn-lg" ng-click="closeLogin();">Save Changes</button>
+  </div>
+</div>
+</div><!--detalis-->

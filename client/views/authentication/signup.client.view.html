@@ -1,0 +1,62 @@
+  <div ng-controller="SignUpController">
+    <div class="wine_tabs_wrap signup" >
+      <div class="modal-header">
+        <h2 class="modal-title" id="Lo_gin">Sign Up</h2>
+      </div>
+      <div class="modal-body">
+        <form name="userForm" ng-submit="signup(userForm.$valid)" class="signin" novalidate autocomplete="off">
+          <div class="wine_tabs_box">
+            <div class="login_form">
+
+              <div class="form-group" show-errors>
+                <input type="text" id="firstName" name="firstName" ng-model="credentials.firstName" placeholder="First Name" required>
+                <div ng-messages="userForm.firstName.$error" role="alert">
+                  <p class="help-block error-text" ng-message="required">First name is required.</p>
+                </div>
+              </div>
+              <div class="form-group" show-errors>
+                <input type="text" id="lastName" name="lastName" ng-model="credentials.lastName" placeholder="Last Name" required>
+                <div ng-messages="userForm.lastName.$error" role="alert">
+                  <p class="help-block error-text" ng-message="required">Last name is required.</p>
+                </div>
+              </div>
+              <div class="form-group" show-errors>
+                <input type="email" id="email" name="email" ng-model="credentials.email" placeholder="Email" required>
+                <div ng-messages="userForm.email.$error" role="alert">
+                  <p class="help-block error-text" ng-message="required">Email address is required.</p>
+                  <p class="help-block error-text" ng-message="email">Email address is invalid.</p>
+                </div>
+              </div>
+
+              <div class="form-group" show-errors>
+                <input type="password" id="password" name="password" ng-model="credentials.password" placeholder="Password" popover="{{popoverMsg}}" popover-trigger="focus" password-validator required>
+                <div ng-messages="userForm.password.$error" role="alert">
+                  <p class="help-block error-text" ng-message="required">Password is required.</p>
+                  <div ng-repeat="passwordError in passwordErrors">
+                    <p class="help-block error-text" ng-show="userForm.password.$error.requirements">{{passwordError}}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group" ng-show="!userForm.password.$error.required">
+                <label>Password Requirements</label>
+                <progressbar value="requirementsProgress" type="{{requirementsColor}}"><span style="color:white; white-space:nowrap;">{{requirementsProgress}}%</span></progressbar>
+              </div>
+            </div>
+            <div ng-show="error" class="text-center text-danger">
+              <strong ng-bind="error"></strong>
+            </div>
+            <div class="login">
+              <div class="text-center form-group" style="padding-top: 15px;">
+                <button type="submit" class="">Sign up</button><br>
+              </div>
+            </div>
+            <!-- <p class="text-center" style="padding-bottom: 10px;">
+              Already have a account? SignIn <a ui-sref="home" class=""><small>Sign in</small></a>
+            </p>
+             -->
+          </div><!-- wine_tabs_box -->
+        </form>
+
+      </div>
+    </div><!-- wine_tabs_wrap -->
+  </div>

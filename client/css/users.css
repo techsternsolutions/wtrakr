@@ -1,0 +1,233 @@
+@media (min-width: 992px) {
+  .nav-users {
+    position: fixed;
+  }
+}
+.social-account-container {
+  display: inline-block;
+  position: relative;
+}
+.btn-remove-account {
+  top: 10px;
+  right: 10px;
+  position: absolute;
+}
+.btn-file {
+  position: relative;
+  overflow: hidden;
+}
+.btn-file input[type="file"] {
+  opacity: 0;
+  margin-top: -25px;
+}
+.user-profile-picture {
+  min-height: 100px;
+  max-height: 100px;
+  border-radius: 50%;
+}
+
+.upload_card {
+  background: #FAFAFA none repeat scroll 0 0;
+  border-radius: 36px;
+  display: inline-block;
+  padding: 10px 15px;
+}
+
+.upload_card:hover {
+  background: #97C42C none repeat scroll 0 0;
+}
+
+.card-plan{padding: 30px 40px;}
+ul.subscription-billing li {
+  margin-left: -80px;
+  margin-right: -40px;
+  /*padding: 30px 40px;*/
+}
+ul.subscription-billing li {
+  border-bottom: 1px solid #ddd;
+  clear: both;
+  overflow: auto;
+}
+.modal-footer{border: none; padding: 5px;}
+
+.account-setting  .nav-tabs > li{
+  font-weight: bold;
+  margin: 0;
+  text-align: center;
+  width: 25%;
+}
+
+.nav-tabs > li > a, .nav-tabs > li > a:hover, .nav-tabs > li > a {
+  background-color: #f2f3f5;
+  color: #787c85;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+  background-color: #fff;
+}
+
+div.add-new-wine ul.nav-tabs > li:last-child a {
+  background: #f2f3f5 url("../images/wine_two_normal.png") no-repeat scroll 30% center;
+  color: #787c85;
+  outline: medium none;
+}
+div.add-new-receipt ul.nav-tabs > li:last-child a {
+  background: #f2f3f5 ;
+  color: #787c85;
+  outline: medium none;
+}
+
+.border-right{border-right: 1px solid #f2f3f4;}
+.border-top{border-top: 1px solid #f2f3f4;}
+
+select.role {margin: 30px;}
+#reset-pass{padding: 15px;}
+
+.accountseting_row select {
+  -moz-appearance: none;
+  background-attachment: scroll;
+  background-clip: border-box;
+  background-color: rgba(0, 0, 0, 0) !important;
+  background-image: url("../images/down-arrow-header.png");
+  background-origin: padding-box;
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-size: auto auto;
+  border: medium none;
+  font-family: "Oswald",sans-serif;
+  font-size: 15px;
+  font-style: italic;
+  width: 100%;
+  color: gray;
+}
+
+ul.card-details{
+  padding: 0;
+  margin: 0;
+}
+ul.card-details li {
+  border-bottom: 1px solid #ddd;
+  clear: both;
+  overflow: auto;
+  margin-left: -40px;
+  margin-right: -40px;
+}
+
+.card-details input {
+  border: medium none;
+  font-family: "Oswald",sans-serif;
+  font-size: 15px;
+  font-style: italic;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  width: 100%;
+}
+
+.home-page {
+  padding: 15px;
+  border-top: 1px solid #fafafb;
+}
+
+.login-body{
+  padding-bottom: 15px;
+}
+
+.login.invite{
+  margin-top: -30px;
+  padding: 15px;
+}
+a:hover, a:focus {
+  text-decoration: none;
+  outline: none;
+}
+
+
+div.add-new-wine ul.nav-tabs > li:first-child a{background:#f2f3f5 url(../images/wine_one_normal.png) no-repeat 30%; color: #787C85 }
+div.add-new-wine ul.nav-tabs > li:last-child a{background:#f2f3f5  url(../images/wine_two_normal.png) no-repeat 30%; color: #787C85;  outline: none}
+
+div.add-new-wine ul.nav-tabs > li.active:first-child a{background:#fff url(../images/wine_one.png) no-repeat 30%; color: orange;}
+div.add-new-wine ul.nav-tabs > li.active:last-child a{background:#FFF url(../images/wine_two_hover.png) no-repeat 30%; color: orange; outline: none}
+
+
+.add_row:hover .normal_add_normal{ display: none; }
+.add_row .hover_add_row:hover{ display: block; }
+
+
+div.add-new-receipt ul.nav-tabs > li:first-child a{background:#f2f3f5;  color: #787C85 }
+div.add-new-receipt ul.nav-tabs > li:last-child a{background:#f2f3f5 ; color: #787C85;  outline: none}
+
+div.add-new-receipt ul.nav-tabs > li.active:first-child a{background:#fff ; color: orange;}
+div.add-new-receipt ul.nav-tabs > li.active:last-child a{background:#FFF; color: orange; outline: none}
+
+
+
+
+.subscription-billing .card-plan h3 {
+  font-size: 20px;
+  font-weight: bold;
+  /*letter-spacing: -1px;*/
+}
+.accountsetting_tabs span.btn-file {
+  color: #a1a4ad;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  height: 30px;
+  padding-left: 15px;
+  padding-top: 6px;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+
+.signin .form-control {
+  box-shadow: none;
+}
+.signin .form-group {
+  margin-bottom: 0;
+}
+
+.signin .form-control:focus {
+  box-shadow: none;
+}
+
+.reset-pass{
+ background-color: #fff;
+ border-radius: 5px;
+ margin: 15% auto auto;
+ max-width: 400px;
+ padding: 15px;
+}
+.signup{
+  margin: -15px;
+  background-color: #fff;
+  border-radius: 5px;
+  margin: 5% auto auto;
+  max-width: 400px;
+}
+
+
+.multiple {
+  border: 1px solid #fff !important;
+  border-radius: 36px;
+  height: 40px;
+  width: 40px;
+}
+
+.email-activate{
+  background-color: #fff;
+  border-radius: 5px;
+  margin: 20% auto;
+  max-width: 400px;
+  padding: 15px
+}
+div.card-plan div.form-group{
+  margin-bottom: 0px; 
+}
+
+
+.main-table{
+  width: 100%;
+  margin: auto;
+}

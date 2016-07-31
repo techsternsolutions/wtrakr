@@ -1,0 +1,42 @@
+<form name="userForm" ng-submit="iviteEmail(userForm.$valid)" class="signin" novalidate autocomplete="off">
+  <div class="row">
+  <div class="newsuser_invite col-md-4">
+      <input type="email" name="email" ng-model="credentials.email" placeholder="INVITE NEW USER">
+    </div>
+    <div class="newsuser_invite col-md-4">
+      <input type="text" name="first_name"  placeholder="FIRST NAME">
+    </div>
+    <div class="newsuser_invite col-md-4">
+      <button type="submit" class="invite_newuser">INVITE NEW USER</button>
+    </div>
+  </div>
+</form>
+
+<ul class="users" ng-init="findUsers()">
+  <li ng-repeat="user in invitedUsers">
+    <div class="col-lg-8">
+      <img ng-src="{{user.profileImageURL}}" class="user-profile-picture" src="modules/users/client/img/profile/default.png">
+      <h3>{{user.firstName}} {{user.lastName}}</h3>
+      <a href="#">{{user.email}}</a>
+      <a class="btn btn-danger" ng-click="removeUser(user)" ng-confirm-click="Would you like to remove?">
+        <i class="glyphicon glyphicon-trash"></i>
+      </a>
+    </div>
+
+    <div class="col-lg-4">
+      <select class="pull-right role" ng-model='user.role' ng-change="changeUserRole(user)">
+        <option ng-repeat="item in roles" ng-selected="item.value == user.roles[0]" value="{{item.value}}">{{item.label}}</option>
+      </select>
+    </div>
+  </li>
+</ul>
+
+<div class="modal-footer login save">
+  <div class="col-md-6 col-sm-6 col-xs-12 footer border-right">
+    <a href="#" class="btn btn-lg save" ng-click="close()">Cancel</a>
+  </div>
+  <div class="col-md-6 col-sm-6 col-xs-12 footer">
+   <button type="submit" class="show-signup btn-lg" ng-click="closeLogin();">Save Changes</button>
+ </div>
+</div>
+

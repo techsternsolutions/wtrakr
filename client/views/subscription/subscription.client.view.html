@@ -1,0 +1,28 @@
+<section>
+  <div class="modal-header user-header">
+    <button type="button" class="close" title="Close" data-placement="top" data-toggle="tooltip" data-dismiss="modal" ng-click="close()" aria-label="Close">x</button>
+    <h2 class="modal-title" id="AccountSetting_tabs">Subscription</h2>
+  </div>
+
+  <div class="modal-body user_setting user_subscription">
+   <uib-tabset>
+   <uib-tab>
+   <uib-tab-heading>Select Plan</uib-tab-heading>
+   <div ng-include src="'/modules/users/client/views/subscription/select-plan.client.view.html'"></div>
+ </uib-tab>
+ <uib-tab heading="Users">
+ <uib-tab-heading>Billing Details</uib-tab-heading>
+ <div ng-include src="'/modules/users/client/views/subscription/billing.details.client.view.html'"></div>
+</uib-tab>
+<uib-tab heading="Users">
+<uib-tab-heading>Card Details</uib-tab-heading>
+<div ng-include src="'/modules/users/client/views/subscription/card-details.client.view.html'"></div>
+</uib-tab>
+</uib-tabset>
+</div>
+</section>
+
+
+<script type="text/ng-template" id="userCard.html">
+  <div ng-include src="'/modules/users/client/views/subscription/card.client.view.html'"></div>
+</script>

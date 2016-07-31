@@ -1,0 +1,83 @@
+<section>
+
+  <div class="modal-header user-header">
+    <button type="button" class="close" data-dismiss="modal" ng-click="close()" aria-label="Close">x</button>
+    <h2 class="modal-title" id="AccountSetting_tabs">Update Card Details</h2>
+  </div>
+
+  <div class="alert alert-danger center" ng-if="processingError && processingError != 'PENDING'">
+    <strong>{{processingError}}</strong>
+  </div>
+  
+  <div class="modal-body card">
+    <form name="stripeCard" ng-submit="addCard(stripeCard.$valid)" class="signin" novalidate autocomplete="off">
+      <ul class="card-details">
+        <li>
+          <div class="col-md-6 col-sm-6 col-xs-12 card-plan border-right">
+            <input type="text" ng-model="card.name" placeholder="Name On Card" required></input>
+            <div ng-messages="stripeCard.card.name.$error" role="alert">
+              <p class="help-block error-text" ng-message="required"> Name is required.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-sm-6 col-xs-12 card-plan">
+            <input type="text" ng-model="card.number" placeholder="16-Digit Card Number" required></input>
+            <div ng-messages="stripeCard.card.number.$error" role="alert">
+              <p class="help-block error-text" ng-message="required"> Number is required.</p>
+            </div>
+          </div>
+
+        </li>
+
+        <li>
+          <div class="col-md-6 col-sm-6 col-xs-12 card-plan border-right">
+            <select name="exp_month" ng-model="card.exp_month" required>
+              <option value="" selected>Exp. Month</option>
+              <option ng-repeat="month in expMonths" value="{{month}}">{{month}}</option>
+            </select>
+            <div ng-messages="stripeCard.card.exp_month.$error" role="alert">
+              <p class="help-block error-text" ng-message="required"> Exp. Month is required.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-sm-6 col-xs-12 card-plan">
+           <select  name="exp_year" ng-model="card.exp_year" required>
+             <option value="" selected>Exp. Year</option>
+             <option ng-repeat="year in expYears" value="{{year}}">{{year}}</option>
+           </select>
+           <div ng-messages="stripeCard.card.exp_year.$error" role="alert">
+            <p class="help-block error-text" ng-message="required"> Exp. Year is required.</p>
+          </div>
+        </div>
+
+      </li>
+      <li>
+        <div class="col-md-6 col-sm-6 col-xs-12 card-plan border-right">
+          <input type="text" ng-model="card.cvc" placeholder="3-Digit Security Code" required></input>
+          <div ng-messages="stripeCard.card.cvc.$error" role="alert">
+            <p class="help-block error-text" ng-message="required"> CVC is required.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-sm-6 col-xs-12 card-plan">
+          <input type="text" placeholder="Coupon Code"></input>
+        </div>
+
+      </li>
+
+    </ul>
+
+
+
+    <div class="modal-footer login save">
+      <div class="col-md-6 col-sm-6 col-xs-12 footer border-right">
+        <a href="#" class="btn btn-lg save" ng-click="close()">Cancel</a>
+      </div>
+
+      <div class="col-md-6 col-sm-6 col-xs-12 footer">
+       <button type="submit" class="show-signup btn-lg">Save Changes</button>
+     </div>
+   </div>
+ </form>
+</div>
+</section>

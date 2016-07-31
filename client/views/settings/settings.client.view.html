@@ -1,0 +1,27 @@
+<section>
+  <div class="modal-header user-header">
+    <button type="button" class="close" title="Close" data-placement="top" data-toggle="tooltip" data-dismiss="modal" ng-click="close()" aria-label="Close">x</button>
+    <h2 class="modal-title" id="AccountSetting_tabs"> Account Setting</h2>
+  </div>
+
+  <div class="modal-body user_setting account-setting">
+   <uib-tabset>
+   <uib-tab>
+   <uib-tab-heading>Details</uib-tab-heading>
+   <div ng-include src="'/modules/users/client/views/settings/details.client.view.html'"></div>
+ </uib-tab>
+ <uib-tab heading="Users">
+ <uib-tab-heading>Users</uib-tab-heading>
+ <div ng-include src="'/modules/users/client/views/settings/user.client.view.html'"></div>
+</uib-tab>
+<uib-tab heading="Reports">
+<uib-tab-heading>Reports</uib-tab-heading>
+<div ng-include src="'/modules/users/client/views/settings/reports.client.view.html'"></div>
+</uib-tab>
+<uib-tab heading="Security">
+  <uib-tab-heading>Security</uib-tab-heading>
+  <div ng-include src="'/modules/users/client/views/settings/security.client.view.html'"></div>
+</uib-tab>
+</tabset>
+</div>
+</section>

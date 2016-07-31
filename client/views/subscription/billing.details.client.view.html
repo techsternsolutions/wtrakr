@@ -1,0 +1,46 @@
+  <ul class="subscription-billing">
+    <li>
+      <div class="col-md-12 col-sm-12 col-xs-12 card-plan">
+        <span>Your Payment Details</span>
+        <h3 ng-show='user.paymentMethods.name'>{{user.paymentMethods.name}} - Card Ending {{user.paymentMethods.last4}} (Expires {{user.paymentMethods.exp_year}})</h3>
+      </div>
+<!--       <div class=" col-md-3 col-sm-3 col-xs-12 card-plan">
+        <a href="#" ng-click="addCard()" class="upload_card">Update Card</a>
+      </div> -->
+    </li>
+
+    <li>
+      <div class="col-md-6 col-sm-6 col-xs-12 card-plan border-right">
+        <span>Next Payment Date</span>
+        <h3 ng-show='user.membership.charge'>{{user.membership.charge | currency}} - due on {{user.membership.end_date | date:'mediumDate'}}</h3>
+      </div>
+
+      <div class="col-md-6 col-sm-6 col-xs-12 card-plan">
+        <span>Payment Frequency</span>
+        <h3 ng-show='user.membership.frequency'>{{user.membership.frequency}} ({{user.membership.charge | currency}})</h3>
+      </div>
+
+    </li>
+
+    <li>
+      <div class="col-md-8 col-sm-8 col-xs-12 card-plan">
+        <span>Last Payment Date</span>
+        <h3 ng-show='user.membership.charge'>{{user.membership.charge | currency}} Paid on {{user.membership.charge_date | date:'mediumDate'}}</h3>
+      </div>
+
+      <div class="col-md-4 col-sm-4 col-xs-12 card-plan">
+        <a href="#" class="upload_card">Download Invoice</a>
+      </div>
+    </li>
+
+  </ul>
+
+  <div class="modal-footer login save">
+    <div class="col-md-6 col-sm-6 col-xs-12 footer border-right">
+      <a href="#" class="btn btn-lg save" ng-click="close()">Cancel</a>
+    </div>
+
+    <div class="col-md-6 col-sm-6 col-xs-12 footer">
+     <button type="submit" class="show-signup btn-lg" ng-click="closeLogin();">Save Changes</button>
+   </div>
+ </div>

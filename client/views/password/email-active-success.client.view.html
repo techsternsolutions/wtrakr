@@ -1,0 +1,12 @@
+<section class="row text-center email-activate" ng-controller="EmailctivationController" ng-init="activate()">
+
+  <div ng-show="success">
+    <h3 class="col-md-12">Email active successfully</h3>
+    <a ui-sref="home" class="col-md-12">Continue</a>
+  </div>
+  <div ng-show="danger">
+    <h3 class="text-danger">Error on activation</h3>
+    <a ui-sref="home">home</a>
+  </div>
+  
+</section>
